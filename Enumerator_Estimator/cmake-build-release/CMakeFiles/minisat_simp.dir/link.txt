@@ -1,0 +1,1 @@
+/usr/bin/c++  -pthread -O3 -lgmp -lgmpxx  -rdynamic CMakeFiles/minisat_simp.dir/minisat/simp/Main.cc.o  -o minisat  libminisat.a -lz -lgmp -lgmpxx 
