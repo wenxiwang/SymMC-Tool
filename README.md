@@ -8,7 +8,7 @@
   - SymMC provides a competitive isomorphic counting approach for Alloy specifications compared to the state-of-the-art model counters.
   
 - ```
-  ![SymMC overview](/images/overview.pdf)
+  ![SymMC overview](/images/overview.jpg)
   ```
 
   The enumerator and estimator part of SymMC is built upon MiniSat, which is a classic CDCL SAT solver. 
