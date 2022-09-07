@@ -6,5 +6,5 @@ CXX_FLAGS = -pthread -O3 -lgmp -lgmpxx   -std=gnu++17
 
 CXX_DEFINES = -D__STDC_FORMAT_MACROS -D__STDC_LIMIT_MACROS
 
-CXX_INCLUDES = -I/home/wenxi/projects/SymMC-Tool/SymMC 
+CXX_INCLUDES = -I/home/wenxi/projects/SymMC-Tool/Enumerator_Estimator 
 

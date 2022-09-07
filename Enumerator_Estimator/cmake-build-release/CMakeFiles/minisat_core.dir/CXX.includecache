@@ -142,7 +142,7 @@ sys/resource.h
 unistd.h
 -
 
-/home/wenxi/projects/SymMC-Tool/SymMC/minisat/core/Main.cc
+/home/wenxi/projects/SymMC-Tool/Enumerator_Estimator/minisat/core/Main.cc
 errno.h
 -
 zlib.h
@@ -150,13 +150,13 @@ zlib.h
 signal.h
 -
 minisat/utils/System.h
-/home/wenxi/projects/SymMC-Tool/SymMC/minisat/core/minisat/utils/System.h
+/home/wenxi/projects/SymMC-Tool/Enumerator_Estimator/minisat/core/minisat/utils/System.h
 minisat/utils/ParseUtils.h
-/home/wenxi/projects/SymMC-Tool/SymMC/minisat/core/minisat/utils/ParseUtils.h
+/home/wenxi/projects/SymMC-Tool/Enumerator_Estimator/minisat/core/minisat/utils/ParseUtils.h
 minisat/utils/Options.h
-/home/wenxi/projects/SymMC-Tool/SymMC/minisat/core/minisat/utils/Options.h
+/home/wenxi/projects/SymMC-Tool/Enumerator_Estimator/minisat/core/minisat/utils/Options.h
 minisat/core/Dimacs.h
-/home/wenxi/projects/SymMC-Tool/SymMC/minisat/core/minisat/core/Dimacs.h
+/home/wenxi/projects/SymMC-Tool/Enumerator_Estimator/minisat/core/minisat/core/Dimacs.h
 minisat/core/Solver.h
-/home/wenxi/projects/SymMC-Tool/SymMC/minisat/core/minisat/core/Solver.h
+/home/wenxi/projects/SymMC-Tool/Enumerator_Estimator/minisat/core/minisat/core/Solver.h
 

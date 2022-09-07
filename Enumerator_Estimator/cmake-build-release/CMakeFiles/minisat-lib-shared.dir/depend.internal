@@ -16,22 +16,22 @@ CMakeFiles/minisat-lib-shared.dir/minisat/core/Solver.cc.o
  ../minisat/utils/Options.h
  ../minisat/utils/ParseUtils.h
  ../minisat/utils/System.h
- /home/wenxi/projects/SymMC-Tool/SymMC/minisat/core/Solver.cc
+ /home/wenxi/projects/SymMC-Tool/Enumerator_Estimator/minisat/core/Solver.cc
 CMakeFiles/minisat-lib-shared.dir/minisat/perm/BasicPermPair.cpp.o
- /home/wenxi/projects/SymMC-Tool/SymMC/minisat/perm/BasicPermPair.cpp
- /home/wenxi/projects/SymMC-Tool/SymMC/minisat/perm/BasicPermPair.h
- /home/wenxi/projects/SymMC-Tool/SymMC/minisat/perm/dep.h
+ /home/wenxi/projects/SymMC-Tool/Enumerator_Estimator/minisat/perm/BasicPermPair.cpp
+ /home/wenxi/projects/SymMC-Tool/Enumerator_Estimator/minisat/perm/BasicPermPair.h
+ /home/wenxi/projects/SymMC-Tool/Enumerator_Estimator/minisat/perm/dep.h
 CMakeFiles/minisat-lib-shared.dir/minisat/perm/MCSampler.cpp.o
- /home/wenxi/projects/SymMC-Tool/SymMC/minisat/perm/BasicPermPair.h
- /home/wenxi/projects/SymMC-Tool/SymMC/minisat/perm/MCSampler.cpp
- /home/wenxi/projects/SymMC-Tool/SymMC/minisat/perm/MCSampler.h
- /home/wenxi/projects/SymMC-Tool/SymMC/minisat/perm/PermPair.h
- /home/wenxi/projects/SymMC-Tool/SymMC/minisat/perm/dep.h
- /home/wenxi/projects/SymMC-Tool/SymMC/minisat/perm/type.h
+ /home/wenxi/projects/SymMC-Tool/Enumerator_Estimator/minisat/perm/BasicPermPair.h
+ /home/wenxi/projects/SymMC-Tool/Enumerator_Estimator/minisat/perm/MCSampler.cpp
+ /home/wenxi/projects/SymMC-Tool/Enumerator_Estimator/minisat/perm/MCSampler.h
+ /home/wenxi/projects/SymMC-Tool/Enumerator_Estimator/minisat/perm/PermPair.h
+ /home/wenxi/projects/SymMC-Tool/Enumerator_Estimator/minisat/perm/dep.h
+ /home/wenxi/projects/SymMC-Tool/Enumerator_Estimator/minisat/perm/type.h
 CMakeFiles/minisat-lib-shared.dir/minisat/perm/PermPair.cpp.o
- /home/wenxi/projects/SymMC-Tool/SymMC/minisat/perm/PermPair.cpp
- /home/wenxi/projects/SymMC-Tool/SymMC/minisat/perm/PermPair.h
- /home/wenxi/projects/SymMC-Tool/SymMC/minisat/perm/dep.h
+ /home/wenxi/projects/SymMC-Tool/Enumerator_Estimator/minisat/perm/PermPair.cpp
+ /home/wenxi/projects/SymMC-Tool/Enumerator_Estimator/minisat/perm/PermPair.h
+ /home/wenxi/projects/SymMC-Tool/Enumerator_Estimator/minisat/perm/dep.h
 CMakeFiles/minisat-lib-shared.dir/minisat/simp/SimpSolver.cc.o
  ../minisat/core/Solver.h
  ../minisat/core/SolverTypes.h
@@ -49,7 +49,7 @@ CMakeFiles/minisat-lib-shared.dir/minisat/simp/SimpSolver.cc.o
  ../minisat/utils/Options.h
  ../minisat/utils/ParseUtils.h
  ../minisat/utils/System.h
- /home/wenxi/projects/SymMC-Tool/SymMC/minisat/simp/SimpSolver.cc
+ /home/wenxi/projects/SymMC-Tool/Enumerator_Estimator/minisat/simp/SimpSolver.cc
 CMakeFiles/minisat-lib-shared.dir/minisat/utils/Options.cc.o
  ../minisat/mtl/IntTypes.h
  ../minisat/mtl/Sort.h
@@ -57,8 +57,8 @@ CMakeFiles/minisat-lib-shared.dir/minisat/utils/Options.cc.o
  ../minisat/mtl/XAlloc.h
  ../minisat/utils/Options.h
  ../minisat/utils/ParseUtils.h
- /home/wenxi/projects/SymMC-Tool/SymMC/minisat/utils/Options.cc
+ /home/wenxi/projects/SymMC-Tool/Enumerator_Estimator/minisat/utils/Options.cc
 CMakeFiles/minisat-lib-shared.dir/minisat/utils/System.cc.o
  ../minisat/mtl/IntTypes.h
  ../minisat/utils/System.h
- /home/wenxi/projects/SymMC-Tool/SymMC/minisat/utils/System.cc
+ /home/wenxi/projects/SymMC-Tool/Enumerator_Estimator/minisat/utils/System.cc

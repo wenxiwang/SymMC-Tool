@@ -16,4 +16,4 @@ CMakeFiles/minisat_core.dir/minisat/core/Main.cc.o
  ../minisat/utils/Options.h
  ../minisat/utils/ParseUtils.h
  ../minisat/utils/System.h
- /home/wenxi/projects/SymMC-Tool/SymMC/minisat/core/Main.cc
+ /home/wenxi/projects/SymMC-Tool/Enumerator_Estimator/minisat/core/Main.cc

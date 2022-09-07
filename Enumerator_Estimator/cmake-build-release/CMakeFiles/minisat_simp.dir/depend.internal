@@ -23,4 +23,4 @@ CMakeFiles/minisat_simp.dir/minisat/simp/Main.cc.o
  ../minisat/utils/Options.h
  ../minisat/utils/ParseUtils.h
  ../minisat/utils/System.h
- /home/wenxi/projects/SymMC-Tool/SymMC/minisat/simp/Main.cc
+ /home/wenxi/projects/SymMC-Tool/Enumerator_Estimator/minisat/simp/Main.cc

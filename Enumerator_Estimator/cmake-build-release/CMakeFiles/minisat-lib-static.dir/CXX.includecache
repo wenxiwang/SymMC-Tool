@@ -148,51 +148,51 @@ sys/resource.h
 unistd.h
 -
 
-/home/wenxi/projects/SymMC-Tool/SymMC/minisat/core/Solver.cc
+/home/wenxi/projects/SymMC-Tool/Enumerator_Estimator/minisat/core/Solver.cc
 math.h
 -
 minisat/mtl/Alg.h
-/home/wenxi/projects/SymMC-Tool/SymMC/minisat/core/minisat/mtl/Alg.h
+/home/wenxi/projects/SymMC-Tool/Enumerator_Estimator/minisat/core/minisat/mtl/Alg.h
 minisat/mtl/Sort.h
-/home/wenxi/projects/SymMC-Tool/SymMC/minisat/core/minisat/mtl/Sort.h
+/home/wenxi/projects/SymMC-Tool/Enumerator_Estimator/minisat/core/minisat/mtl/Sort.h
 minisat/utils/System.h
-/home/wenxi/projects/SymMC-Tool/SymMC/minisat/core/minisat/utils/System.h
+/home/wenxi/projects/SymMC-Tool/Enumerator_Estimator/minisat/core/minisat/utils/System.h
 minisat/core/Solver.h
-/home/wenxi/projects/SymMC-Tool/SymMC/minisat/core/minisat/core/Solver.h
+/home/wenxi/projects/SymMC-Tool/Enumerator_Estimator/minisat/core/minisat/core/Solver.h
 
-/home/wenxi/projects/SymMC-Tool/SymMC/minisat/perm/BasicPermPair.cpp
+/home/wenxi/projects/SymMC-Tool/Enumerator_Estimator/minisat/perm/BasicPermPair.cpp
 BasicPermPair.h
-/home/wenxi/projects/SymMC-Tool/SymMC/minisat/perm/BasicPermPair.h
+/home/wenxi/projects/SymMC-Tool/Enumerator_Estimator/minisat/perm/BasicPermPair.h
 
-/home/wenxi/projects/SymMC-Tool/SymMC/minisat/perm/BasicPermPair.h
+/home/wenxi/projects/SymMC-Tool/Enumerator_Estimator/minisat/perm/BasicPermPair.h
 dep.h
-/home/wenxi/projects/SymMC-Tool/SymMC/minisat/perm/dep.h
+/home/wenxi/projects/SymMC-Tool/Enumerator_Estimator/minisat/perm/dep.h
 
-/home/wenxi/projects/SymMC-Tool/SymMC/minisat/perm/MCSampler.cpp
+/home/wenxi/projects/SymMC-Tool/Enumerator_Estimator/minisat/perm/MCSampler.cpp
 MCSampler.h
-/home/wenxi/projects/SymMC-Tool/SymMC/minisat/perm/MCSampler.h
+/home/wenxi/projects/SymMC-Tool/Enumerator_Estimator/minisat/perm/MCSampler.h
 sys/resource.h
 -
 
-/home/wenxi/projects/SymMC-Tool/SymMC/minisat/perm/MCSampler.h
+/home/wenxi/projects/SymMC-Tool/Enumerator_Estimator/minisat/perm/MCSampler.h
 dep.h
-/home/wenxi/projects/SymMC-Tool/SymMC/minisat/perm/dep.h
+/home/wenxi/projects/SymMC-Tool/Enumerator_Estimator/minisat/perm/dep.h
 type.h
-/home/wenxi/projects/SymMC-Tool/SymMC/minisat/perm/type.h
+/home/wenxi/projects/SymMC-Tool/Enumerator_Estimator/minisat/perm/type.h
 PermPair.h
-/home/wenxi/projects/SymMC-Tool/SymMC/minisat/perm/PermPair.h
+/home/wenxi/projects/SymMC-Tool/Enumerator_Estimator/minisat/perm/PermPair.h
 BasicPermPair.h
-/home/wenxi/projects/SymMC-Tool/SymMC/minisat/perm/BasicPermPair.h
+/home/wenxi/projects/SymMC-Tool/Enumerator_Estimator/minisat/perm/BasicPermPair.h
 
-/home/wenxi/projects/SymMC-Tool/SymMC/minisat/perm/PermPair.cpp
+/home/wenxi/projects/SymMC-Tool/Enumerator_Estimator/minisat/perm/PermPair.cpp
 PermPair.h
-/home/wenxi/projects/SymMC-Tool/SymMC/minisat/perm/PermPair.h
+/home/wenxi/projects/SymMC-Tool/Enumerator_Estimator/minisat/perm/PermPair.h
 
-/home/wenxi/projects/SymMC-Tool/SymMC/minisat/perm/PermPair.h
+/home/wenxi/projects/SymMC-Tool/Enumerator_Estimator/minisat/perm/PermPair.h
 dep.h
-/home/wenxi/projects/SymMC-Tool/SymMC/minisat/perm/dep.h
+/home/wenxi/projects/SymMC-Tool/Enumerator_Estimator/minisat/perm/dep.h
 
-/home/wenxi/projects/SymMC-Tool/SymMC/minisat/perm/dep.h
+/home/wenxi/projects/SymMC-Tool/Enumerator_Estimator/minisat/perm/dep.h
 iostream
 -
 iomanip
@@ -234,31 +234,31 @@ gmp.h
 gmpxx.h
 -
 
-/home/wenxi/projects/SymMC-Tool/SymMC/minisat/perm/type.h
+/home/wenxi/projects/SymMC-Tool/Enumerator_Estimator/minisat/perm/type.h
 
-/home/wenxi/projects/SymMC-Tool/SymMC/minisat/simp/SimpSolver.cc
+/home/wenxi/projects/SymMC-Tool/Enumerator_Estimator/minisat/simp/SimpSolver.cc
 minisat/mtl/Sort.h
-/home/wenxi/projects/SymMC-Tool/SymMC/minisat/simp/minisat/mtl/Sort.h
+/home/wenxi/projects/SymMC-Tool/Enumerator_Estimator/minisat/simp/minisat/mtl/Sort.h
 minisat/simp/SimpSolver.h
-/home/wenxi/projects/SymMC-Tool/SymMC/minisat/simp/minisat/simp/SimpSolver.h
+/home/wenxi/projects/SymMC-Tool/Enumerator_Estimator/minisat/simp/minisat/simp/SimpSolver.h
 minisat/utils/System.h
-/home/wenxi/projects/SymMC-Tool/SymMC/minisat/simp/minisat/utils/System.h
+/home/wenxi/projects/SymMC-Tool/Enumerator_Estimator/minisat/simp/minisat/utils/System.h
 
-/home/wenxi/projects/SymMC-Tool/SymMC/minisat/utils/Options.cc
+/home/wenxi/projects/SymMC-Tool/Enumerator_Estimator/minisat/utils/Options.cc
 minisat/mtl/Sort.h
-/home/wenxi/projects/SymMC-Tool/SymMC/minisat/utils/minisat/mtl/Sort.h
+/home/wenxi/projects/SymMC-Tool/Enumerator_Estimator/minisat/utils/minisat/mtl/Sort.h
 minisat/utils/Options.h
-/home/wenxi/projects/SymMC-Tool/SymMC/minisat/utils/minisat/utils/Options.h
+/home/wenxi/projects/SymMC-Tool/Enumerator_Estimator/minisat/utils/minisat/utils/Options.h
 minisat/utils/ParseUtils.h
-/home/wenxi/projects/SymMC-Tool/SymMC/minisat/utils/minisat/utils/ParseUtils.h
+/home/wenxi/projects/SymMC-Tool/Enumerator_Estimator/minisat/utils/minisat/utils/ParseUtils.h
 
-/home/wenxi/projects/SymMC-Tool/SymMC/minisat/utils/System.cc
+/home/wenxi/projects/SymMC-Tool/Enumerator_Estimator/minisat/utils/System.cc
 signal.h
 -
 stdio.h
 -
 minisat/utils/System.h
-/home/wenxi/projects/SymMC-Tool/SymMC/minisat/utils/minisat/utils/System.h
+/home/wenxi/projects/SymMC-Tool/Enumerator_Estimator/minisat/utils/minisat/utils/System.h
 stdlib.h
 -
 malloc/malloc.h

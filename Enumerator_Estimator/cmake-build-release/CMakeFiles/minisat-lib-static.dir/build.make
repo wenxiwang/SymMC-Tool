@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/wenxi/projects/SymMC-Tool/SymMC
+CMAKE_SOURCE_DIR = /home/wenxi/projects/SymMC-Tool/Enumerator_Estimator
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/wenxi/projects/SymMC-Tool/SymMC/cmake-build-release
+CMAKE_BINARY_DIR = /home/wenxi/projects/SymMC-Tool/Enumerator_Estimator/cmake-build-release
 
 # Include any dependencies generated for this target.
 include CMakeFiles/minisat-lib-static.dir/depend.make
@@ -59,94 +59,94 @@ include CMakeFiles/minisat-lib-static.dir/flags.make
 
 CMakeFiles/minisat-lib-static.dir/minisat/utils/Options.cc.o: CMakeFiles/minisat-lib-static.dir/flags.make
 CMakeFiles/minisat-lib-static.dir/minisat/utils/Options.cc.o: ../minisat/utils/Options.cc
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/wenxi/projects/SymMC-Tool/SymMC/cmake-build-release/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/minisat-lib-static.dir/minisat/utils/Options.cc.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/minisat-lib-static.dir/minisat/utils/Options.cc.o -c /home/wenxi/projects/SymMC-Tool/SymMC/minisat/utils/Options.cc
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/wenxi/projects/SymMC-Tool/Enumerator_Estimator/cmake-build-release/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/minisat-lib-static.dir/minisat/utils/Options.cc.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/minisat-lib-static.dir/minisat/utils/Options.cc.o -c /home/wenxi/projects/SymMC-Tool/Enumerator_Estimator/minisat/utils/Options.cc
 
 CMakeFiles/minisat-lib-static.dir/minisat/utils/Options.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/minisat-lib-static.dir/minisat/utils/Options.cc.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/wenxi/projects/SymMC-Tool/SymMC/minisat/utils/Options.cc > CMakeFiles/minisat-lib-static.dir/minisat/utils/Options.cc.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/wenxi/projects/SymMC-Tool/Enumerator_Estimator/minisat/utils/Options.cc > CMakeFiles/minisat-lib-static.dir/minisat/utils/Options.cc.i
 
 CMakeFiles/minisat-lib-static.dir/minisat/utils/Options.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/minisat-lib-static.dir/minisat/utils/Options.cc.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/wenxi/projects/SymMC-Tool/SymMC/minisat/utils/Options.cc -o CMakeFiles/minisat-lib-static.dir/minisat/utils/Options.cc.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/wenxi/projects/SymMC-Tool/Enumerator_Estimator/minisat/utils/Options.cc -o CMakeFiles/minisat-lib-static.dir/minisat/utils/Options.cc.s
 
 CMakeFiles/minisat-lib-static.dir/minisat/utils/System.cc.o: CMakeFiles/minisat-lib-static.dir/flags.make
 CMakeFiles/minisat-lib-static.dir/minisat/utils/System.cc.o: ../minisat/utils/System.cc
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/wenxi/projects/SymMC-Tool/SymMC/cmake-build-release/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/minisat-lib-static.dir/minisat/utils/System.cc.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/minisat-lib-static.dir/minisat/utils/System.cc.o -c /home/wenxi/projects/SymMC-Tool/SymMC/minisat/utils/System.cc
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/wenxi/projects/SymMC-Tool/Enumerator_Estimator/cmake-build-release/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/minisat-lib-static.dir/minisat/utils/System.cc.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/minisat-lib-static.dir/minisat/utils/System.cc.o -c /home/wenxi/projects/SymMC-Tool/Enumerator_Estimator/minisat/utils/System.cc
 
 CMakeFiles/minisat-lib-static.dir/minisat/utils/System.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/minisat-lib-static.dir/minisat/utils/System.cc.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/wenxi/projects/SymMC-Tool/SymMC/minisat/utils/System.cc > CMakeFiles/minisat-lib-static.dir/minisat/utils/System.cc.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/wenxi/projects/SymMC-Tool/Enumerator_Estimator/minisat/utils/System.cc > CMakeFiles/minisat-lib-static.dir/minisat/utils/System.cc.i
 
 CMakeFiles/minisat-lib-static.dir/minisat/utils/System.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/minisat-lib-static.dir/minisat/utils/System.cc.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/wenxi/projects/SymMC-Tool/SymMC/minisat/utils/System.cc -o CMakeFiles/minisat-lib-static.dir/minisat/utils/System.cc.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/wenxi/projects/SymMC-Tool/Enumerator_Estimator/minisat/utils/System.cc -o CMakeFiles/minisat-lib-static.dir/minisat/utils/System.cc.s
 
 CMakeFiles/minisat-lib-static.dir/minisat/core/Solver.cc.o: CMakeFiles/minisat-lib-static.dir/flags.make
 CMakeFiles/minisat-lib-static.dir/minisat/core/Solver.cc.o: ../minisat/core/Solver.cc
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/wenxi/projects/SymMC-Tool/SymMC/cmake-build-release/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/minisat-lib-static.dir/minisat/core/Solver.cc.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/minisat-lib-static.dir/minisat/core/Solver.cc.o -c /home/wenxi/projects/SymMC-Tool/SymMC/minisat/core/Solver.cc
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/wenxi/projects/SymMC-Tool/Enumerator_Estimator/cmake-build-release/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/minisat-lib-static.dir/minisat/core/Solver.cc.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/minisat-lib-static.dir/minisat/core/Solver.cc.o -c /home/wenxi/projects/SymMC-Tool/Enumerator_Estimator/minisat/core/Solver.cc
 
 CMakeFiles/minisat-lib-static.dir/minisat/core/Solver.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/minisat-lib-static.dir/minisat/core/Solver.cc.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/wenxi/projects/SymMC-Tool/SymMC/minisat/core/Solver.cc > CMakeFiles/minisat-lib-static.dir/minisat/core/Solver.cc.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/wenxi/projects/SymMC-Tool/Enumerator_Estimator/minisat/core/Solver.cc > CMakeFiles/minisat-lib-static.dir/minisat/core/Solver.cc.i
 
 CMakeFiles/minisat-lib-static.dir/minisat/core/Solver.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/minisat-lib-static.dir/minisat/core/Solver.cc.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/wenxi/projects/SymMC-Tool/SymMC/minisat/core/Solver.cc -o CMakeFiles/minisat-lib-static.dir/minisat/core/Solver.cc.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/wenxi/projects/SymMC-Tool/Enumerator_Estimator/minisat/core/Solver.cc -o CMakeFiles/minisat-lib-static.dir/minisat/core/Solver.cc.s
 
 CMakeFiles/minisat-lib-static.dir/minisat/simp/SimpSolver.cc.o: CMakeFiles/minisat-lib-static.dir/flags.make
 CMakeFiles/minisat-lib-static.dir/minisat/simp/SimpSolver.cc.o: ../minisat/simp/SimpSolver.cc
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/wenxi/projects/SymMC-Tool/SymMC/cmake-build-release/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/minisat-lib-static.dir/minisat/simp/SimpSolver.cc.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/minisat-lib-static.dir/minisat/simp/SimpSolver.cc.o -c /home/wenxi/projects/SymMC-Tool/SymMC/minisat/simp/SimpSolver.cc
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/wenxi/projects/SymMC-Tool/Enumerator_Estimator/cmake-build-release/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/minisat-lib-static.dir/minisat/simp/SimpSolver.cc.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/minisat-lib-static.dir/minisat/simp/SimpSolver.cc.o -c /home/wenxi/projects/SymMC-Tool/Enumerator_Estimator/minisat/simp/SimpSolver.cc
 
 CMakeFiles/minisat-lib-static.dir/minisat/simp/SimpSolver.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/minisat-lib-static.dir/minisat/simp/SimpSolver.cc.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/wenxi/projects/SymMC-Tool/SymMC/minisat/simp/SimpSolver.cc > CMakeFiles/minisat-lib-static.dir/minisat/simp/SimpSolver.cc.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/wenxi/projects/SymMC-Tool/Enumerator_Estimator/minisat/simp/SimpSolver.cc > CMakeFiles/minisat-lib-static.dir/minisat/simp/SimpSolver.cc.i
 
 CMakeFiles/minisat-lib-static.dir/minisat/simp/SimpSolver.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/minisat-lib-static.dir/minisat/simp/SimpSolver.cc.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/wenxi/projects/SymMC-Tool/SymMC/minisat/simp/SimpSolver.cc -o CMakeFiles/minisat-lib-static.dir/minisat/simp/SimpSolver.cc.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/wenxi/projects/SymMC-Tool/Enumerator_Estimator/minisat/simp/SimpSolver.cc -o CMakeFiles/minisat-lib-static.dir/minisat/simp/SimpSolver.cc.s
 
 CMakeFiles/minisat-lib-static.dir/minisat/perm/BasicPermPair.cpp.o: CMakeFiles/minisat-lib-static.dir/flags.make
 CMakeFiles/minisat-lib-static.dir/minisat/perm/BasicPermPair.cpp.o: ../minisat/perm/BasicPermPair.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/wenxi/projects/SymMC-Tool/SymMC/cmake-build-release/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/minisat-lib-static.dir/minisat/perm/BasicPermPair.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/minisat-lib-static.dir/minisat/perm/BasicPermPair.cpp.o -c /home/wenxi/projects/SymMC-Tool/SymMC/minisat/perm/BasicPermPair.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/wenxi/projects/SymMC-Tool/Enumerator_Estimator/cmake-build-release/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/minisat-lib-static.dir/minisat/perm/BasicPermPair.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/minisat-lib-static.dir/minisat/perm/BasicPermPair.cpp.o -c /home/wenxi/projects/SymMC-Tool/Enumerator_Estimator/minisat/perm/BasicPermPair.cpp
 
 CMakeFiles/minisat-lib-static.dir/minisat/perm/BasicPermPair.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/minisat-lib-static.dir/minisat/perm/BasicPermPair.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/wenxi/projects/SymMC-Tool/SymMC/minisat/perm/BasicPermPair.cpp > CMakeFiles/minisat-lib-static.dir/minisat/perm/BasicPermPair.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/wenxi/projects/SymMC-Tool/Enumerator_Estimator/minisat/perm/BasicPermPair.cpp > CMakeFiles/minisat-lib-static.dir/minisat/perm/BasicPermPair.cpp.i
 
 CMakeFiles/minisat-lib-static.dir/minisat/perm/BasicPermPair.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/minisat-lib-static.dir/minisat/perm/BasicPermPair.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/wenxi/projects/SymMC-Tool/SymMC/minisat/perm/BasicPermPair.cpp -o CMakeFiles/minisat-lib-static.dir/minisat/perm/BasicPermPair.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/wenxi/projects/SymMC-Tool/Enumerator_Estimator/minisat/perm/BasicPermPair.cpp -o CMakeFiles/minisat-lib-static.dir/minisat/perm/BasicPermPair.cpp.s
 
 CMakeFiles/minisat-lib-static.dir/minisat/perm/MCSampler.cpp.o: CMakeFiles/minisat-lib-static.dir/flags.make
 CMakeFiles/minisat-lib-static.dir/minisat/perm/MCSampler.cpp.o: ../minisat/perm/MCSampler.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/wenxi/projects/SymMC-Tool/SymMC/cmake-build-release/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/minisat-lib-static.dir/minisat/perm/MCSampler.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/minisat-lib-static.dir/minisat/perm/MCSampler.cpp.o -c /home/wenxi/projects/SymMC-Tool/SymMC/minisat/perm/MCSampler.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/wenxi/projects/SymMC-Tool/Enumerator_Estimator/cmake-build-release/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/minisat-lib-static.dir/minisat/perm/MCSampler.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/minisat-lib-static.dir/minisat/perm/MCSampler.cpp.o -c /home/wenxi/projects/SymMC-Tool/Enumerator_Estimator/minisat/perm/MCSampler.cpp
 
 CMakeFiles/minisat-lib-static.dir/minisat/perm/MCSampler.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/minisat-lib-static.dir/minisat/perm/MCSampler.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/wenxi/projects/SymMC-Tool/SymMC/minisat/perm/MCSampler.cpp > CMakeFiles/minisat-lib-static.dir/minisat/perm/MCSampler.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/wenxi/projects/SymMC-Tool/Enumerator_Estimator/minisat/perm/MCSampler.cpp > CMakeFiles/minisat-lib-static.dir/minisat/perm/MCSampler.cpp.i
 
 CMakeFiles/minisat-lib-static.dir/minisat/perm/MCSampler.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/minisat-lib-static.dir/minisat/perm/MCSampler.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/wenxi/projects/SymMC-Tool/SymMC/minisat/perm/MCSampler.cpp -o CMakeFiles/minisat-lib-static.dir/minisat/perm/MCSampler.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/wenxi/projects/SymMC-Tool/Enumerator_Estimator/minisat/perm/MCSampler.cpp -o CMakeFiles/minisat-lib-static.dir/minisat/perm/MCSampler.cpp.s
 
 CMakeFiles/minisat-lib-static.dir/minisat/perm/PermPair.cpp.o: CMakeFiles/minisat-lib-static.dir/flags.make
 CMakeFiles/minisat-lib-static.dir/minisat/perm/PermPair.cpp.o: ../minisat/perm/PermPair.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/wenxi/projects/SymMC-Tool/SymMC/cmake-build-release/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/minisat-lib-static.dir/minisat/perm/PermPair.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/minisat-lib-static.dir/minisat/perm/PermPair.cpp.o -c /home/wenxi/projects/SymMC-Tool/SymMC/minisat/perm/PermPair.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/wenxi/projects/SymMC-Tool/Enumerator_Estimator/cmake-build-release/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/minisat-lib-static.dir/minisat/perm/PermPair.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/minisat-lib-static.dir/minisat/perm/PermPair.cpp.o -c /home/wenxi/projects/SymMC-Tool/Enumerator_Estimator/minisat/perm/PermPair.cpp
 
 CMakeFiles/minisat-lib-static.dir/minisat/perm/PermPair.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/minisat-lib-static.dir/minisat/perm/PermPair.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/wenxi/projects/SymMC-Tool/SymMC/minisat/perm/PermPair.cpp > CMakeFiles/minisat-lib-static.dir/minisat/perm/PermPair.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/wenxi/projects/SymMC-Tool/Enumerator_Estimator/minisat/perm/PermPair.cpp > CMakeFiles/minisat-lib-static.dir/minisat/perm/PermPair.cpp.i
 
 CMakeFiles/minisat-lib-static.dir/minisat/perm/PermPair.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/minisat-lib-static.dir/minisat/perm/PermPair.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/wenxi/projects/SymMC-Tool/SymMC/minisat/perm/PermPair.cpp -o CMakeFiles/minisat-lib-static.dir/minisat/perm/PermPair.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/wenxi/projects/SymMC-Tool/Enumerator_Estimator/minisat/perm/PermPair.cpp -o CMakeFiles/minisat-lib-static.dir/minisat/perm/PermPair.cpp.s
 
 # Object files for target minisat-lib-static
 minisat__lib__static_OBJECTS = \
@@ -170,7 +170,7 @@ libminisat.a: CMakeFiles/minisat-lib-static.dir/minisat/perm/MCSampler.cpp.o
 libminisat.a: CMakeFiles/minisat-lib-static.dir/minisat/perm/PermPair.cpp.o
 libminisat.a: CMakeFiles/minisat-lib-static.dir/build.make
 libminisat.a: CMakeFiles/minisat-lib-static.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/wenxi/projects/SymMC-Tool/SymMC/cmake-build-release/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Linking CXX static library libminisat.a"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/wenxi/projects/SymMC-Tool/Enumerator_Estimator/cmake-build-release/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Linking CXX static library libminisat.a"
 	$(CMAKE_COMMAND) -P CMakeFiles/minisat-lib-static.dir/cmake_clean_target.cmake
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/minisat-lib-static.dir/link.txt --verbose=$(VERBOSE)
 
@@ -184,6 +184,6 @@ CMakeFiles/minisat-lib-static.dir/clean:
 .PHONY : CMakeFiles/minisat-lib-static.dir/clean
 
 CMakeFiles/minisat-lib-static.dir/depend:
-	cd /home/wenxi/projects/SymMC-Tool/SymMC/cmake-build-release && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/wenxi/projects/SymMC-Tool/SymMC /home/wenxi/projects/SymMC-Tool/SymMC /home/wenxi/projects/SymMC-Tool/SymMC/cmake-build-release /home/wenxi/projects/SymMC-Tool/SymMC/cmake-build-release /home/wenxi/projects/SymMC-Tool/SymMC/cmake-build-release/CMakeFiles/minisat-lib-static.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/wenxi/projects/SymMC-Tool/Enumerator_Estimator/cmake-build-release && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/wenxi/projects/SymMC-Tool/Enumerator_Estimator /home/wenxi/projects/SymMC-Tool/Enumerator_Estimator /home/wenxi/projects/SymMC-Tool/Enumerator_Estimator/cmake-build-release /home/wenxi/projects/SymMC-Tool/Enumerator_Estimator/cmake-build-release /home/wenxi/projects/SymMC-Tool/Enumerator_Estimator/cmake-build-release/CMakeFiles/minisat-lib-static.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/minisat-lib-static.dir/depend
 

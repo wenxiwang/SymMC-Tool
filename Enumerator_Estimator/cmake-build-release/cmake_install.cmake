@@ -1,4 +1,4 @@
-# Install script for directory: /home/wenxi/projects/SymMC-Tool/SymMC
+# Install script for directory: /home/wenxi/projects/SymMC-Tool/Enumerator_Estimator
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -38,7 +38,7 @@ if(NOT DEFINED CMAKE_CROSSCOMPILING)
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib" TYPE STATIC_LIBRARY FILES "/home/wenxi/projects/SymMC-Tool/SymMC/cmake-build-release/libminisat.a")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib" TYPE STATIC_LIBRARY FILES "/home/wenxi/projects/SymMC-Tool/Enumerator_Estimator/cmake-build-release/libminisat.a")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
@@ -54,8 +54,8 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_
     endif()
   endforeach()
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib" TYPE SHARED_LIBRARY FILES
-    "/home/wenxi/projects/SymMC-Tool/SymMC/cmake-build-release/libminisat.so.2.1.0"
-    "/home/wenxi/projects/SymMC-Tool/SymMC/cmake-build-release/libminisat.so.2"
+    "/home/wenxi/projects/SymMC-Tool/Enumerator_Estimator/cmake-build-release/libminisat.so.2.1.0"
+    "/home/wenxi/projects/SymMC-Tool/Enumerator_Estimator/cmake-build-release/libminisat.so.2"
     )
   foreach(file
       "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/libminisat.so.2.1.0"
@@ -77,7 +77,7 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_
          FILE "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/libminisat.so"
          RPATH "")
   endif()
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib" TYPE SHARED_LIBRARY FILES "/home/wenxi/projects/SymMC-Tool/SymMC/cmake-build-release/libminisat.so")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib" TYPE SHARED_LIBRARY FILES "/home/wenxi/projects/SymMC-Tool/Enumerator_Estimator/cmake-build-release/libminisat.so")
   if(EXISTS "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/libminisat.so" AND
      NOT IS_SYMLINK "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/libminisat.so")
     if(CMAKE_INSTALL_DO_STRIP)
@@ -93,7 +93,7 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_
          FILE "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/bin/minisat_core"
          RPATH "")
   endif()
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/bin" TYPE EXECUTABLE FILES "/home/wenxi/projects/SymMC-Tool/SymMC/cmake-build-release/minisat_core")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/bin" TYPE EXECUTABLE FILES "/home/wenxi/projects/SymMC-Tool/Enumerator_Estimator/cmake-build-release/minisat_core")
   if(EXISTS "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/bin/minisat_core" AND
      NOT IS_SYMLINK "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/bin/minisat_core")
     if(CMAKE_INSTALL_DO_STRIP)
@@ -109,7 +109,7 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_
          FILE "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/bin/minisat"
          RPATH "")
   endif()
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/bin" TYPE EXECUTABLE FILES "/home/wenxi/projects/SymMC-Tool/SymMC/cmake-build-release/minisat")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/bin" TYPE EXECUTABLE FILES "/home/wenxi/projects/SymMC-Tool/Enumerator_Estimator/cmake-build-release/minisat")
   if(EXISTS "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/bin/minisat" AND
      NOT IS_SYMLINK "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/bin/minisat")
     if(CMAKE_INSTALL_DO_STRIP)
@@ -120,11 +120,11 @@ endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/include/minisat" TYPE DIRECTORY FILES
-    "/home/wenxi/projects/SymMC-Tool/SymMC/minisat/mtl"
-    "/home/wenxi/projects/SymMC-Tool/SymMC/minisat/utils"
-    "/home/wenxi/projects/SymMC-Tool/SymMC/minisat/core"
-    "/home/wenxi/projects/SymMC-Tool/SymMC/minisat/simp"
-    "/home/wenxi/projects/SymMC-Tool/SymMC/minisat/perm"
+    "/home/wenxi/projects/SymMC-Tool/Enumerator_Estimator/minisat/mtl"
+    "/home/wenxi/projects/SymMC-Tool/Enumerator_Estimator/minisat/utils"
+    "/home/wenxi/projects/SymMC-Tool/Enumerator_Estimator/minisat/core"
+    "/home/wenxi/projects/SymMC-Tool/Enumerator_Estimator/minisat/simp"
+    "/home/wenxi/projects/SymMC-Tool/Enumerator_Estimator/minisat/perm"
     FILES_MATCHING REGEX "/[^/]*\\.h$")
 endif()
 
@@ -136,5 +136,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/home/wenxi/projects/SymMC-Tool/SymMC/cmake-build-release/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/home/wenxi/projects/SymMC-Tool/Enumerator_Estimator/cmake-build-release/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

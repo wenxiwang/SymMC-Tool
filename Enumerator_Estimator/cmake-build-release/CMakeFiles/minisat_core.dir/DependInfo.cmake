@@ -4,7 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/wenxi/projects/SymMC-Tool/SymMC/minisat/core/Main.cc" "/home/wenxi/projects/SymMC-Tool/SymMC/cmake-build-release/CMakeFiles/minisat_core.dir/minisat/core/Main.cc.o"
+  "/home/wenxi/projects/SymMC-Tool/Enumerator_Estimator/minisat/core/Main.cc" "/home/wenxi/projects/SymMC-Tool/Enumerator_Estimator/cmake-build-release/CMakeFiles/minisat_core.dir/minisat/core/Main.cc.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 
@@ -21,7 +21,7 @@ set(CMAKE_CXX_TARGET_INCLUDE_PATH
 
 # Targets to which this target links.
 set(CMAKE_TARGET_LINKED_INFO_FILES
-  "/home/wenxi/projects/SymMC-Tool/SymMC/cmake-build-release/CMakeFiles/minisat-lib-static.dir/DependInfo.cmake"
+  "/home/wenxi/projects/SymMC-Tool/Enumerator_Estimator/cmake-build-release/CMakeFiles/minisat-lib-static.dir/DependInfo.cmake"
   )
 
 # Fortran module output directory.

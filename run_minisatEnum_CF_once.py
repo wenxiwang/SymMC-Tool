@@ -3,7 +3,8 @@ import signal
 import sys
 import subprocess
 
-executable = '/home/wenxi/projects/MCNonisomComb/minisatEnum_CF_once/cmake-build-release/minisat'
+root = getcwd()
+executable = root + '/Enumerator_Estimator/cmake-build-release/minisat'
 timeout = 5000
 files =[]
 
