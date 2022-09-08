@@ -28,11 +28,23 @@ SymMC consists of three modules:
 
 ### 3. Repo structures:
 
-The enhanced Kodkod part corresponds to the folder named `Enhanced_Kodkod`. 
+```
+|-Enhanced_Kodkod
+|-Enumerator_Estimator
+|-Files
+	|-specs
+	|-cnfs
+	|-syms
+```
 
-The input Alloy specification is stored in the `Files/specs` folder; the output sat formula by enhanced Kodkod module is stored in the `File/cnfs` folder; and the output symmetry information by enhanced Kodkod module is stored in the `Files/syms` folder.
 
-The folder named `Enumerator_Estimator` is for the All-SAT model enumerator and the estimator parts.
+
+1. The folder named `Enhanced_Kodkod`is for the enhanced Kodkod (part 1).
+2. The folder named `Enumerator_Estimator` is for the All-SAT model enumerator (part 2) and the estimator (part 3).
+
+3. The input Alloy specification is stored in the `Files/specs` folder; the output sat formula by enhanced Kodkod module is stored in the `File/cnfs` folder; and the output symmetry information by enhanced Kodkod module is stored in the `Files/syms` folder. 
+
+
 
 ### 
 
