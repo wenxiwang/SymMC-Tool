@@ -10,7 +10,6 @@
 #include "PermPair.h"
 #include "BasicPermPair.h"
 
-extern size_t AlloySolNum;
 extern size_t model_indx;
 extern unordered_map<size_t, int> model_indx_map;
 extern vector<int> parent;
@@ -35,8 +34,9 @@ extern double exp_perm_sr;
 extern unordered_set<size_t> nonIsomSolSets;
 extern mpf_class sampledPermNum;
 
-extern mpf_class cntFSB;
-extern mpf_class cntNSB;
+extern mpf_class mcPSB; // model count under partial symmetry breaking
+extern mpf_class mcFSB; // model count under full symmetry breaking
+extern mpf_class mcNSB; // model count under no symmetry breaking
 
 extern int is_sampling;
 extern bool isNonIsom;

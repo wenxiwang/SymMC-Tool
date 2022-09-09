@@ -44,7 +44,17 @@ SymMC consists of three modules:
 
 3. The input Alloy specification is stored in the `Files/specs` folder; the output sat formula by enhanced Kodkod module is stored in the `File/cnfs` folder; and the output symmetry information by enhanced Kodkod module is stored in the `Files/syms` folder. 
 
+### 4. Reference:
 
+For detailed descriptions about SymMC, please refer to our ESEC/FSE 2022 paper:
 
-### 
+```
+@inproceedings{wang2022symmc,
+  title={SymMC: Approximate Model Enumeration and Counting Using Symmetry Information for Alloy Specifications},
+  author={Wang, Wenxi and Hu, Yang and Kenneth, McMillan and Khurshid, Sarfraz},
+  booktitle={Proceedings of the 30th ACM Joint Meeting on European Software Engineering Conference and Symposium on the Foundations of Software Engineering},
+  pages={},
+  year={2022}
+}
+```
 

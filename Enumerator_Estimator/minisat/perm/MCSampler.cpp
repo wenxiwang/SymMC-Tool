@@ -2,8 +2,6 @@
 
 #include <sys/resource.h>
 
-
-size_t AlloySolNum = 0;
 size_t model_indx = 0;
 unordered_map<size_t, int> model_indx_map;
 vector<int> parent;
@@ -29,8 +27,9 @@ size_t sampSize_sofar = 0;
 
 mpf_class real_comb_sr;
 
-mpf_class cntFSB = 0;
-mpf_class cntNSB = 0;
+mpf_class mcPSB = 0; 
+mpf_class mcFSB = 0;
+mpf_class mcNSB = 0;
 
 // non-isomorphic solution set;
 unordered_set<size_t> nonIsomSolSets;

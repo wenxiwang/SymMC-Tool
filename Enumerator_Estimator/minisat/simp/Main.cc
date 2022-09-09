@@ -73,73 +73,17 @@ void printStats(Solver& solver)
 
 
 //=================================================================================================
-void genSol(vec<Lit>&  blocking_clause) {
-    blocking_clause.clear();
-    std::string line = "";
-    for (int i = 0; i < primary_var; i++) {
-        blocking_clause.push(mkLit(i, solver->modelValue(i) == l_True));
-        if(solver->modelValue(i) == l_True) {
-            line += "1";
-        }
-        else {
-            line += "0";
-        }
-    }
 
-    batchvec.emplace_back(line);
-    solver->addClause_(blocking_clause);
-}
-
-
-
-void genSolsRealSingle() {
-
-    vec<Lit> blocking_clause;
-    while(solver->solve()) {
-        blocking_clause.clear();
-        std::string line = "";
-        for (int i = 0; i < primary_var; i++) {
-            blocking_clause.push(mkLit(i, solver->modelValue(i) == l_True));
-            if(solver->modelValue(i) == l_True) {
-                line += "1";
-            }
-            else {
-                line += "0";
-            }
-        }
-
-        AlloySolNum++;
-
-        solver->addClause_(blocking_clause);
-    }
-}
-
-bool genBatchSols() {
-    //cout << "genBatchSols" << endl;
-    vec<Lit>  blocking_clause;
-    //batchvec.clear();
-    int cnt=0;
-    while (cnt < batch) {
-        if(solver->solve()) {
-            genSol(blocking_clause);
-            cnt++;
-        }
-        else
-            return true;
-    }
-    return false;
-}
 
 void* generatePerms(char* permFile) {
 
     string permF(permFile);
     parseBasicPerms(permF, numList, basicPPList);
+    
     // get the total permutation number "total_perm_num"
     getTotalPermNum(numList);
     
     // decide the sampling mode based on MIN_COMB_NUM and MAX_CAPACITY
-    //cout << "total_perm_num: " << total_perm_num << endl;
-
     if(total_perm_num <= MIN_COMB_NUM) {
         is_sampling = 0;
     }
@@ -179,7 +123,7 @@ chrono::high_resolution_clock::time_point startTime;
 void symMC_CF(void* input) {
     //cout << "gensolssignle" << endl;
     char** argv = (char**) input;
-    generatePerms(argv[2]);
+    generatePerms(argv[3]);
 
     // generate the models under partial symmetry breaking with blocking method
     vec<Lit> blocking_clause;
@@ -195,18 +139,18 @@ void symMC_CF(void* input) {
                 line += "0";
             }
         }
-        AlloySolNum++;
+        mcPSB++;
         batchvec.emplace_back(line);
         solver->addClause_(blocking_clause);
-        //cout << " AlloySolNum: " << AlloySolNum << endl;
+        //cout << " mcPSB: " << mcPSB << endl;
     }
     
     auto endTime = chrono::high_resolution_clock::now();
     chrono::duration<double, std::milli> time_span = endTime - startTime;
-    cout << "AlloySolNum: " << AlloySolNum << ",time:" << time_span.count()/1000.0 << endl;
+    //cout << "mcPSB: " << mcPSB << ",time:" << time_span.count()/1000.0 << endl;
     
-    parent.resize(AlloySolNum);
-    rank_.resize(AlloySolNum);
+    parent.resize(mcPSB.get_ui());
+    rank_.resize(mcPSB.get_ui());
     
     int model_id = 0;
     for(string model : batchvec) {
@@ -219,19 +163,19 @@ void symMC_CF(void* input) {
 	model_id++;	    
     }
     
-    mpf_class diff_cntFSB = 1;
-    mpf_class prev_cntFSB = AlloySolNum;
-    //cout << "cntFSB:" << cntFSB << ",is_sampling:" << is_sampling << ",sampSize:" << sampSize << endl;
+    mpf_class diff_mcFSB = 1;
+    mpf_class prev_mcFSB = mcPSB;
+    //cout << "mcFSB:" << mcFSB << ",is_sampling:" << is_sampling << ",sampSize:" << sampSize << endl;
     
     if(is_sampling == 0) {
     	for(string model: batchvec) {
             std::hash<string> str_hash;
     	    GenPermSols_CF(model, str_hash(model));
     	}
-    	cntFSB = 0;
-    	for(int i = 0; i < AlloySolNum; i++) 
+    	mcFSB = 0;
+    	for(int i = 0; i < mcPSB; i++) 
        	    if(parent[i] == i) 
-                cntFSB += 1;             
+                mcFSB += 1;             
     }
     else if(is_sampling == 1) {
     
@@ -242,7 +186,7 @@ void symMC_CF(void* input) {
         
         auto endTime = chrono::high_resolution_clock::now();
     	    chrono::duration<double, std::milli> time_span = endTime - startTime; 
-            cout << "cntFSB:" << cntFSB << ",diff_cntFSB:" << diff_cntFSB << ",is_sampling:" << is_sampling << ",sampSize:"             
+            cout << "mcFSB:" << mcFSB << ",diff_mcFSB:" << diff_mcFSB << ",is_sampling:" << is_sampling << ",sampSize:"             
             << sampSize << ",total_perm_num:" << total_perm_num <<  ",time:" << time_span.count()/1000.0 << endl;
             
         do {     
@@ -251,13 +195,13 @@ void symMC_CF(void* input) {
     	        GenPermSols_CF(model, str_hash(model));
     	    }	
     
-            cntFSB = 0;
-    	    for(int i = 0; i < AlloySolNum; i++)
+            mcFSB = 0;
+    	    for(int i = 0; i < mcPSB; i++)
        	        if(parent[i] == i) 
-                     cntFSB += 1;
+                     mcFSB += 1;
         
-            diff_cntFSB = prev_cntFSB - cntFSB;
-            prev_cntFSB = cntFSB; 
+            diff_mcFSB = prev_mcFSB - mcFSB;
+            prev_mcFSB = mcFSB; 
         
             sampSize_sofar += sampSize;    
             
@@ -273,15 +217,15 @@ void symMC_CF(void* input) {
             
             auto endTime = chrono::high_resolution_clock::now();
     	    chrono::duration<double, std::milli> time_span = endTime - startTime; 
-            cout << "cntFSB:" << cntFSB << ",diff_cntFSB:" << diff_cntFSB << ",is_sampling:" << is_sampling << ",sampSize:"             
+            cout << "mcFSB:" << mcFSB << ",diff_mcFSB:" << diff_mcFSB << ",is_sampling:" << is_sampling << ",sampSize:"             
             << sampSize << ",total_perm_num:" << total_perm_num <<  ",time:" << time_span.count()/1000.0 << endl;
         
-    	} while(diff_cntFSB != 0 && sampSize > 0) ;
+    	} while(diff_mcFSB != 0 && sampSize > 0) ;
     }
     else { // is_sampling ==2   
         auto endTime = chrono::high_resolution_clock::now();
     	    chrono::duration<double, std::milli> time_span = endTime - startTime; 
-            cout << "cntFSB:" << cntFSB << ",diff_cntFSB:" << diff_cntFSB << ",is_sampling:" << is_sampling << ",sampSize:"             
+            cout << "mcFSB:" << mcFSB << ",diff_mcFSB:" << diff_mcFSB << ",is_sampling:" << is_sampling << ",sampSize:"             
             << sampSize << ",total_perm_num:" << total_perm_num <<  ",time:" << time_span.count()/1000.0 << endl; 	
     	do {    	    
     	    samp_ppList.clear();
@@ -295,13 +239,13 @@ void symMC_CF(void* input) {
                 std::hash<string> str_hash;
     	        GenPermSols_CF(model, str_hash(model));
     	    }	   
-    	    cntFSB = 0;
-    	    for(int i = 0; i < AlloySolNum; i++) 
+    	    mcFSB = 0;
+    	    for(int i = 0; i < mcPSB; i++) 
        	        if(parent[i] == i) 
-                     cntFSB += 1;
+                     mcFSB += 1;
 
-            diff_cntFSB = prev_cntFSB - cntFSB;
-            prev_cntFSB = cntFSB; 
+            diff_mcFSB = prev_mcFSB - mcFSB;
+            prev_mcFSB = mcFSB; 
         
             sampSize_sofar += sampSize;    
             
@@ -317,10 +261,10 @@ void symMC_CF(void* input) {
             
             auto endTime = chrono::high_resolution_clock::now();
     	    chrono::duration<double, std::milli> time_span = endTime - startTime; 
-            cout << "cntFSB:" << cntFSB << ",diff_cntFSB:" << diff_cntFSB << ",is_sampling:" << is_sampling << ",sampSize:"             
+            cout << "mcFSB:" << mcFSB << ",diff_mcFSB:" << diff_mcFSB << ",is_sampling:" << is_sampling << ",sampSize:"             
             << sampSize << ",total_perm_num:" << total_perm_num <<  ",time:" << time_span.count()/1000.0 << endl;
         
-    	} while(diff_cntFSB != 0 && sampSize > 0) ;
+    	} while(diff_mcFSB != 0 && sampSize > 0) ;
     	
     	cout << "end sampling" << endl;
     	
@@ -334,306 +278,89 @@ void symMC_CN(void* input) {
      double sum_mu = 0.0;
      sampSize = sampSize_sofar;
      sampSize_sofar = 0;
-     for(int i = 0; i < AlloySolNum; i++) 
+     for(int i = 0; i < mcPSB; i++) 
        	    if(parent[i] == i) 
                  sum_mu += GenPermSols_CN(batchvec[i], str_hash(batchvec[i])); 
      
-     cntNSB = total_perm_num * sum_mu;  
+     mcNSB = total_perm_num * sum_mu;  
      sampSize_sofar = sampSize;  
-     cout << "sum_mu:" << sum_mu << ",cntNSB: " << cntNSB << endl;
 }
-
-
-void symMC_CN_prev(void* input) {
-    //cout << "gensolssignle" << endl;
-    char** argv = (char**) input;
-    generatePerms(argv[2]);
-
-    // generate the models under partial symmetry breaking with blocking method
-    vec<Lit> blocking_clause;
-    while(solver->solve()) {
-        blocking_clause.clear();
-        std::string line = "";
-        for (int i = 0; i < primary_var; i++) {
-            blocking_clause.push(mkLit(i, solver->modelValue(i) == l_True));
-            if(solver->modelValue(i) == l_True) {
-                line += "1";
-            }
-            else {
-                line += "0";
-            }
-        }
-        AlloySolNum++;
-        batchvec.emplace_back(line);
-        solver->addClause_(blocking_clause);
-        //cout << " AlloySolNum: " << AlloySolNum << endl;
-    }
-    
-    auto endTime = chrono::high_resolution_clock::now();
-    chrono::duration<double, std::milli> time_span = endTime - startTime;
-    cout << "AlloySolNum: " << AlloySolNum << ",time:" << time_span.count()/1000.0 << endl;
-    
-    parent.resize(AlloySolNum);
-    rank_.resize(AlloySolNum);
-    mu.resize(AlloySolNum);
-    
-    int model_id = 0;
-    std::hash<string> str_hash;
-    for(string model : batchvec) {
-        // get the model under partial symmetry breaking from the pool       
-        size_t hash_value = str_hash(model);
-	model_indx_map[hash_value] = model_id;	
-	parent[model_id] = model_id;
-	rank_[model_id] = 0;
-	model_id++;	    
-    }
-    
-    mpf_class diff_cntFSB = 1;
-    mpf_class prev_cntFSB = AlloySolNum;
-    //cout << "cntFSB:" << cntFSB << ",is_sampling:" << is_sampling << ",sampSize:" << sampSize << endl;
-    
-    int round = 0;
-    if(is_sampling == 0) {
-        int model_id = 0;
-    	for(string model: batchvec) {          
-    	    mu[model_id] = GenPermSols_CN(model, str_hash(model));
-    	    model_id++;
-    	}
-    	cntFSB = 0;
-    	for(int i = 0; i < AlloySolNum; i++) 
-       	    if(parent[i] == i) 
-                cntFSB += 1;             
-    }
-    else if(is_sampling == 1) {
-    
-    	for(int i= 0; i< total_perm_num; i++) {
-            shuffle_indx_vector.push_back(i);
-        }
-        random_shuffle(shuffle_indx_vector.begin(), shuffle_indx_vector.end());
-        
-        auto endTime = chrono::high_resolution_clock::now();
-    	    chrono::duration<double, std::milli> time_span = endTime - startTime; 
-            cout << "cntFSB:" << cntFSB << ",diff_cntFSB:" << diff_cntFSB << ",is_sampling:" << is_sampling << ",sampSize:"             
-            << sampSize << ",total_perm_num:" << total_perm_num <<  ",time:" << time_span.count()/1000.0 << endl;
-            
-        do {
-            if(round == 0) {
-            	int model_id = 0;
-	    	for(string model: batchvec) {                	
-    	        	mu[model_id] = GenPermSols_CN(model, str_hash(model));
-    	        	model_id++;
-    	    	}
-    	    }
-    	    else {
-		if(sampSize >= MAX_COMB_NUM) {
-		    cout << "sampling 1 += mu" << endl;
-		    int model_id = 0;
-    	    	    for(string model: batchvec) {                	
-    	        	mu[model_id] += GenPermSols_CN(model, str_hash(model));
-    	        	model_id++;
-    	    	    }
-    	    	}
-    	    	else
-    	            for(string model: batchvec) {                	
-    	        	GenPermSols_CF(model, str_hash(model));
-    	    	    }
-    	    }	
-    
-            cntFSB = 0;
-    	    for(int i = 0; i < AlloySolNum; i++)
-       	        if(parent[i] == i) 
-                     cntFSB += 1;
-            
-        
-            diff_cntFSB = prev_cntFSB - cntFSB;
-            prev_cntFSB = cntFSB; 
-        
-            sampSize_sofar += sampSize;   
-            round++; 
-            
-            mpf_class sampSizeMPF = ADD_SR * total_perm_num;
-            if (sampSizeMPF < MIN_COMB_NUM)
-                sampSizeMPF = MIN_COMB_NUM;
-            if (sampSizeMPF > MAX_COMB_NUM) 
-                sampSizeMPF = MAX_COMB_NUM * pow(2,round);
-            sampSize = sampSizeMPF.get_ui();
-            
- 	    if(sampSize_sofar + sampSize > total_perm_num)
- 	    	sampSize = total_perm_num.get_ui() - sampSize_sofar;
-            
-            auto endTime = chrono::high_resolution_clock::now();
-    	    chrono::duration<double, std::milli> time_span = endTime - startTime; 
-            cout << "cntFSB:" << cntFSB << ",diff_cntFSB:" << diff_cntFSB << ",is_sampling:" << is_sampling << ",sampSize:"             
-            << sampSize << ",total_perm_num:" << total_perm_num <<  ",time:" << time_span.count()/1000.0 << endl;
-
-    	} while(diff_cntFSB != 0 && sampSize > 0) ;
-    }
-    else { // is_sampling ==2   
-        auto endTime = chrono::high_resolution_clock::now();
-    	    chrono::duration<double, std::milli> time_span = endTime - startTime; 
-            cout << "cntFSB:" << cntFSB << ",diff_cntFSB:" << diff_cntFSB << ",is_sampling:" << is_sampling << ",sampSize:"             
-            << sampSize << ",total_perm_num:" << total_perm_num <<  ",time:" << time_span.count()/1000.0 << endl; 
-
-    	do {    	    
-    	    samp_ppList.clear();
-            comb_hash_set.clear();   	    
-    	    list<list<list<list<int>>>> ccl = SampPerms();
-    	    comb_hash_set_sofar.insert(comb_hash_set.begin(), comb_hash_set.end());
-            L2P transposList = getTransPosList(ccl);           
-            genSampPermList(transposList, basicPPList, samp_ppList);
-            if(round == 0) {
-            	int model_id = 0;
-	    	for(string model: batchvec) {               	
-    	        	mu[model_id] = GenPermSols_CN(model, str_hash(model));
-    	        	model_id++;
-    	    	}
-    	    }
-    	    else {
-    	        if(sampSize >= MAX_COMB_NUM) {
-    	            cout << "sampling 2 += mu" << endl;
-    	            int model_id = 0;
-    	    	    for(string model: batchvec) {                	
-    	        	mu[model_id] += GenPermSols_CN(model, str_hash(model));
-    	        	model_id++;
-    	    	    }
-    	    	}
-    	    	else
-    	            for(string model: batchvec) {                	
-    	        	GenPermSols_CF(model, str_hash(model));
-    	    	    }
-    	    }   	   
-    	    cntFSB = 0;
-    	    for(int i = 0; i < AlloySolNum; i++) 
-       	        if(parent[i] == i) 
-                     cntFSB += 1;
-            
-            
-
-            diff_cntFSB = prev_cntFSB - cntFSB;
-            prev_cntFSB = cntFSB; 
-        
-            sampSize_sofar += sampSize;    
-            
-            round++;
-            
-            mpf_class sampSizeMPF = ADD_SR * total_perm_num;
-            if (sampSizeMPF < MIN_COMB_NUM)
-                sampSizeMPF = MIN_COMB_NUM;
-            if (sampSizeMPF > MAX_COMB_NUM) {
-                sampSizeMPF = MAX_COMB_NUM * pow(2,round);
-            }
-            sampSize = sampSizeMPF.get_ui();
-            
-            if(sampSize_sofar + sampSize > total_perm_num)
- 	    	sampSize = total_perm_num.get_ui() - sampSize_sofar;
-            
-            auto endTime = chrono::high_resolution_clock::now();
-    	    chrono::duration<double, std::milli> time_span = endTime - startTime; 
-            cout << "cntFSB:" << cntFSB << ",diff_cntFSB:" << diff_cntFSB << ",is_sampling:" << is_sampling << ",sampSize:"             
-            << sampSize << ",total_perm_num:" << total_perm_num <<  ",time:" << time_span.count()/1000.0 << endl;
-            
-            
-        
-    	} while(diff_cntFSB != 0 && sampSize > 0) ;
-
-    	cout << "end sampling2" << endl;
-    	
-    }
-
-    double sum_mu = 0.0;
-    if(is_sampling == 1 && round > 1 && cntFSB == 1) {
-        sampSize = sampSize_sofar; 
-        sampSize_sofar = 0;        
-        sum_mu = GenPermSols_CN(batchvec[0], str_hash(batchvec[0]));    
-        //cout << "sum_mu: " << sum_mu << " sampSize: " << sampSize << " sampSize_sofar: " << sampSize_sofar;         
-    }
-    else if(sampSize >= MAX_COMB_NUM) {
-        for(int i = 0; i < AlloySolNum; i++) 
-            if(parent[i] == i) 
-                sum_mu += (mu[i]/round);
-    }
-    else {
-        for(int i = 0; i < AlloySolNum; i++) 
-            if(parent[i] == i) 
-                sum_mu += mu[i]; 
-            
-    }  
-    
-    cntNSB = total_perm_num * sum_mu;
-    
-    cout << "sum_mu:" << sum_mu << ",cntNSB: " << cntNSB << endl;
-      	    
-}
-
-
 
 int main(int argc, char** argv)
 {
     try {
-	
-        setUsageHelp("USAGE: %s [options] <input-file> <result-output-file>\n\n  where input may be either in plain or gzipped DIMACS.\n");
         
 #if defined(__linux__) && defined(_FPU_EXTENDED) && defined(_FPU_DOUBLE) && defined(_FPU_GETCW)
         fpu_control_t oldcw, newcw;
         _FPU_GETCW(oldcw); newcw = (oldcw & ~_FPU_EXTENDED) | _FPU_DOUBLE; _FPU_SETCW(newcw);
         //printf("WARNING: for repeatability, setting FPU to use double precision\n");
 #endif
-        // Extra options:
-        //
-        IntOption    verb   ("MAIN", "verb",   "Verbosity level (0=silent, 1=some, 2=more).", 0, IntRange(0, 2));
-        IntOption    cpu_lim("MAIN", "cpu-lim","Limit on CPU time allowed in seconds.\n", INT32_MAX, IntRange(0, INT32_MAX));
-        IntOption    mem_lim("MAIN", "mem-lim","Limit on memory usage in megabytes.\n", INT32_MAX, IntRange(0, INT32_MAX));
-        BoolOption   cnt_all("MAIN", "all",    "Count all models.", false);
-        BoolOption   use_pol("MAIN", "pol",    "Set preferred polarity for minimal model search.", true);
-	
-        parseOptions(argc, argv, true);
 
         Solver S;
         startTime = chrono::high_resolution_clock::now();
-        //double initial_time = cpuTime();
 
         solver = &S;
         // Use signal handlers that forcibly quit:
         signal(SIGINT, SIGINT_exit);
         signal(SIGXCPU,SIGINT_exit);
 
-        if (argc == 1)
-            printf("Reading from standard input... Use '--help' for help.\n");
-
-       // printf("argv[1]: %s\n", argv[1]);
+        if (argc != 4) {
+            printf("The number of arguments should be 4.\n");
+	    printf("The format should be ./minisat -$option $sat_file $sym_file\n");
+	    printf("There are three possible options:\n");
+	    printf("1) -getmcFSB: for getting the non-isomorphic models/count\n");
+	    printf("2) -getmcNSB: for getting the isomorphic model count\n");
+	    printf("3) -kodkodpruning: for getting the quantification metric in evaluating the pruning ability of the applied Kodkod partial SBP.\n");
+	    exit(0);
+        }
         
-        gzFile in = (argc == 1) ? gzdopen(0, "rb") : gzopen(argv[1], "rb");
+        gzFile in = (argc == 1) ? gzdopen(0, "rb") : gzopen(argv[2], "rb");
         if (in == NULL)
-            printf("ERROR! Could not open file: %s\n", argc == 1 ? "<stdin>" : argv[1]), exit(1);
-        
-        if (verb > 0){
-            printf("============================[ Problem Statistics ]=============================\n");
-            printf("|                                                                             |\n"); }
+            printf("ERROR! Could not open file: %s\n", argc == 1 ? "<stdin>" : argv[2]), exit(1);
+
         
         primary_var = parse_DIMACS(in, S);
-
-        //cout << "primary_var: " << primary_var << endl;
         gzclose(in);
-        
-        if (verb > 0){
-            printf("|  Number of variables:  %12d                                         |\n", S.nVars());
-            printf("|  Number of clauses:    %12d                                         |\n", S.nClauses()); }
 
     	struct timespec stoptime;
     	if (clock_gettime(CLOCK_REALTIME, &stoptime) == -1) {
         	cerr << "Failed to get curr time" << endl;
         	return 0;
     	}
-   	    stoptime.tv_sec += timeout;
+   	   stoptime.tv_sec += timeout;
 
-    	//symMC_CF(argv);
-    	symMC_CN(argv);
-
-
-        auto endTime = chrono::high_resolution_clock::now();
-    	chrono::duration<double, std::milli> time_span = endTime - startTime;
+	if( strcmp(argv[1] , "-getmcFSB") == 0) {
+		cout << "Starting solving ......... " << endl;
+		symMC_CF(argv);
+		auto endTime = chrono::high_resolution_clock::now();
+    		chrono::duration<double, std::milli> time_span = endTime - startTime;
+    		cout << "The number of non-isomorphic model count is: " << mcFSB << 
+    		"\nThe total solving time is: " << time_span.count()/1000.0 <<  " seconds" << endl;
+	}
+	else if( strcmp(argv[1] , "-getmcNSB") == 0) {
+		cout << "Starting solving ......... " << endl;
+		symMC_CN(argv);
+		auto endTime = chrono::high_resolution_clock::now();
+    		chrono::duration<double, std::milli> time_span = endTime - startTime;
+    		cout << "The number of isomorphic model count is: " << mcNSB << 
+    		"\nThe total solving time is: " << time_span.count()/1000.0 << " seconds" << endl;
+	}
+	else if( strcmp(argv[1] , "-kodkodpruning") == 0) {
+		cout << "Starting solving ......... " << endl;
+		symMC_CF(argv);
+		auto endTime = chrono::high_resolution_clock::now();
+    		chrono::duration<double, std::milli> time_span = endTime - startTime;
+    		cout << "The pruning ability of Kodkod partial symmetry breaking predicate is: " << mcFSB / mcPSB << 
+    		"\nThe total solving time is: " << time_span.count()/1000.0 << " seconds" << endl;
+	}
+	else {
+	    printf("There are only three possible options:\n");
+	    printf("1) -getmcFSB: for getting the non-isomorphic models/count\n");
+	    printf("2) -getmcNSB: for getting the isomorphic model count\n");
+	    printf("3) -kodkodpruning: for getting the quantification metric in evaluating the pruning ability of the applied Kodkod partial SBP.\n");
+	    exit(0);
+	}
         
-        cout << "cntFSB:" << cntFSB << ",cntNSB:" << cntNSB << ",is_sampling:" << is_sampling << ",sampSizesofar:" << sampSize_sofar << ",total_perm_num:" << total_perm_num << ",time:" << time_span.count()/1000.0 << endl;
         
     } catch (OutOfMemoryException&){
         printf("===============================================================================\n");
