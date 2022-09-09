@@ -42,9 +42,16 @@ SymMC consists of three modules:
 1. The folder named `Enhanced_Kodkod`is for the enhanced Kodkod (part 1).
 2. The folder named `Enumerator_Estimator` is for the All-SAT model enumerator (part 2) and the estimator (part 3).
 
-3. The input Alloy specification is stored in the `Files/specs` folder; the output sat formula by enhanced Kodkod module is stored in the `File/cnfs` folder; and the output symmetry information by enhanced Kodkod module is stored in the `Files/syms` folder. 
+3. The input Alloy specification is stored in the `Files/specs` folder; the sat formula output by `Enhanced_Kodkod` (which is also one input of the `Enumerator_Estimator` ) is stored in the `File/cnfs` folder; and the symmetry information output by `Enhanced_Kodkod` (which is also one input of the  `Enumerator_Estimator`) is stored in the `Files/syms` folder. 
 
-### 4. Reference:
+### 4. Instructions of Using SymMC
+
+- Step 1: Use enhanced Kodkod module to translate the input Alloy specification into a SAT formula and also extract the symmetry information.
+- Step 2: Take the translated SAT formula and the extracted symmetry information, use the enumerator and estimator modules to get three possible outputs: 1) the non-isomorphic models/count of the input Alloy specification; 2) the isomorphic count of the input Alloy specification; 3) the quantification metric in evaluating the pruning ability of the applied Kodkod partial SBP.
+
+### 
+
+### 5. Reference:
 
 For detailed descriptions about SymMC, please refer to our ESEC/FSE 2022 paper:
 
