@@ -46,35 +46,21 @@ SymMC consists of three modules:
 
    
 
-### 4. Instructions of Building SymMC
+### 4. Building SymMC
 
-- Step 1: Build the `Enhanced_Kodkod` module.
+- ​	1. Requirements:
 
-  ```
   
-  ```
 
-- Step 2: Build the `Enumerator_Estimator` module:
+-  2. Instructions:
 
-  1. the non-isomorphic models/count of the input Alloy specification:
+      Step 1: Build the `Enhanced_Kodkod` module.
 
-     ``````
-     
-     ``````
+      Step 2: Build the `Enumerator_Estimator` module: 
 
-  2. the isomorphic count of the input Alloy specification:
+​			   go to `Enumerator_Estimator` folder and enter the command:
 
-     ``````
-     
-     ``````
-
-  3. the quantification metric in evaluating the pruning ability of the applied Kodkod partial SBP:
-
-     ``````
-     
-     ``````
-
-### 5. Instructions of Using SymMC
+### 5. Using SymMC
 
 - Step 1: Use enhanced Kodkod module to translate the input Alloy specification into a SAT formula and also extract the symmetry information.
 
