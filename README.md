@@ -41,46 +41,57 @@ SymMC consists of three modules:
 
 1. The folder named `Enhanced_Kodkod`is for the enhanced Kodkod (part 1).
 2. The folder named `Enumerator_Estimator` is for the All-SAT model enumerator (part 2) and the estimator (part 3).
-
 3. The input Alloy specification is stored in the `Files/specs` folder; the sat formula output by `Enhanced_Kodkod` (which is also one input of the `Enumerator_Estimator` ) is stored in the `File/cnfs` folder; and the symmetry information output by `Enhanced_Kodkod` (which is also one input of the  `Enumerator_Estimator`) is stored in the `Files/syms` folder. 
 
    
 
 ### 4. Building SymMC
 
-- ​	1. Requirements:
+- 1. Requirements:
 
-  
+- 2. Instructions:
 
--  2. Instructions:
+     Step 1: Build the `Enhanced_Kodkod` module:
 
-      Step 1: Build the `Enhanced_Kodkod` module.
+     go to `Enhanced_Kodkod` folder and run the command:
 
-      Step 2: Build the `Enumerator_Estimator` module: 
+     ``````
+     tbd
+     ``````
+     
+     Step 2: Build the `Enumerator_Estimator` module: 
+     
+     go to `Enumerator_Estimator` folder and run the following command. You will get the `cmake-build-release` folder, if the build succeeds.
+     
+     ``````
+     ./build.sh
+     ``````
 
-​			   go to `Enumerator_Estimator` folder and enter the command:
+​			   
 
 ### 5. Using SymMC
 
-- Step 1: Use enhanced Kodkod module to translate the input Alloy specification into a SAT formula and also extract the symmetry information.
+- Step 1: Use enhanced Kodkod module to translate the input Alloy specification into a SAT formula and also extract the symmetry information. We denote the path of the generated SAT formula as `path_to_sat_file`; and the path of the extracted symmetry information as `path_to_sym_file`.
 
   ```
   tbd
 
-- Step 2: Take the translated SAT formula and the extracted symmetry information, use the enumerator and estimator modules to get three possible outputs:
+- Step 2: Take the translated SAT formula and the extracted symmetry information, use the enumerator and estimator modules to get three possible outputs. Go to the `Enumerator_Estimator` folder, and:
 
-  1. the non-isomorphic models/count of the input Alloy specification:
-
-     ``````
-
-  2. the isomorphic count of the input Alloy specification:
+  1. to get the non-isomorphic models/count of the input Alloy specification, run the command:
 
      ``````
-
-  3. the quantification metric in evaluating the pruning ability of the applied Kodkod partial SBP:
-
+     ./cmake-build-release/minisat -getmcFSB $path_to_sat_file $path_to_sym_file
+  
+  2. to get the isomorphic count of the input Alloy specification, run the command:
+  
      ``````
-     
+     ./cmake-build-release/minisat -getmcNSB $path_to_sat_file $path_to_sym_file
+
+  3. to get the quantification metric in evaluating the pruning ability of the applied Kodkod partial SBP, run the command:
+  
+     ``````
+     ./cmake-build-release/minisat -kodkodpruning $path_to_sat_file $path_to_sym_file
      ``````
 
 ### 6. Reference:
