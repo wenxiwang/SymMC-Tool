@@ -37,13 +37,10 @@ SymMC consists of three modules:
 	|-syms
 ```
 
-
-
 1. The folder named `Enhanced_Kodkod`is for the enhanced Kodkod (part 1).
 2. The folder named `Enumerator_Estimator` is for the All-SAT model enumerator (part 2) and the estimator (part 3).
 3. The input Alloy specification is stored in the `Files/specs` folder; the sat formula output by `Enhanced_Kodkod` (which is also one input of the `Enumerator_Estimator` ) is stored in the `File/cnfs` folder; and the symmetry information output by `Enhanced_Kodkod` (which is also one input of the  `Enumerator_Estimator`) is stored in the `Files/syms` folder. 
 
-   
 
 ### 4. Building SymMC
 
@@ -66,8 +63,6 @@ SymMC consists of three modules:
      ``````
      ./build.sh
      ``````
-
-​			   
 
 ### 5. Using SymMC
 
