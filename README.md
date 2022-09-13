@@ -95,7 +95,9 @@ SymMC consists of three modules:
      ./cmake-build-release/minisat -kodkodpruning $path_to_sat_file $path_to_sym_file
      ``````
 
-### 6. Reference:
+### 6. SymMC Dataset:
+
+### 7. Reference:
 
 For detailed descriptions about SymMC, please refer to our ESEC/FSE 2022 paper:
 
