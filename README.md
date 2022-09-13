@@ -31,15 +31,16 @@ SymMC consists of three modules:
 ```
 |-Enhanced_Kodkod
 |-Enumerator_Estimator
-|-Files
+|-Datasets
 	|-specs
-	|-cnfs
+	|-cnfs_NSB
+	|-cnfs_PSB
 	|-syms
 ```
 
 1. The folder named `Enhanced_Kodkod`is for the enhanced Kodkod (part 1).
 2. The folder named `Enumerator_Estimator` is for the All-SAT model enumerator (part 2) and the estimator (part 3).
-3. The input Alloy specification is stored in the `Files/specs` folder; the sat formula output by `Enhanced_Kodkod` (which is also one input of the `Enumerator_Estimator` ) is stored in the `File/cnfs` folder; and the symmetry information output by `Enhanced_Kodkod` (which is also one input of the  `Enumerator_Estimator`) is stored in the `Files/syms` folder. 
+3. The folder named `Datasets` is for the datasets used in our FSE'2022 paper. 
 
 
 ### 4. Building SymMC
@@ -96,6 +97,13 @@ SymMC consists of three modules:
      ``````
 
 ### 6. SymMC Dataset:
+
+As introduced above, `Datasets` folder contains the datasets used in our FSE'2022 paper.  
+
+- `cnfs_NSB` contains all 110 translated SAT formulas under no symmetry breaking. 
+- `cnfs_PSB` folder contains all 110 translated SAT formulas under partial symmetry breaking. 
+- `syms` folder contains all the extracted symmetry information for the 110 specifications. 
+- `specs` folder contains all the Alloy specifications we used in our experiments; There are four categories in our collected specifications, including 49 specs in Alloy category, 12 specs in Kodkod category, 19 specs in n-Queen category, and 30 specs in Data Structure category. `specs` folder does not contains the specifications from Kodkod category, because the specifications are not written in Alloy language, but in Kodkod. However, we have included the translated SAT formulas in Kodkod categories in `cnfs_PSB` and `cnfs_NSB` folders.
 
 ### 7. Reference:
 
