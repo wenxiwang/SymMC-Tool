@@ -1,0 +1,15 @@
+<project>
+    <property name="lib.dir" value="lib"/>
+
+    <target name="clean">
+        <delete dir="bin"/>
+    </target>
+
+    <target name="compile">
+        <path id="classpath">
+            <fileset dir="${lib.dir}" includes="**/*.jar"/>
+        </path>
+        <mkdir dir="bin"/>
+        <javac includeantruntime="false" srcdir="src" destdir="bin" classpathref="classpath"/>
+    </target>
+</project>
