@@ -46,19 +46,23 @@ SymMC consists of three modules:
 
 - 1. Requirements:
 
+     To build the `Enhanced_Kodkod` module, you need to install `jdk1.8` and `ant`. You may install them as follows:
+
+     ``````
+     sudo apt-get install openjdk-8-jdk ant
+     ``````
+
+     Since `Enumerator_Estimator` module is built upon MiniSat, to build the `Enumerator_Estimator` module, you need to meet the requirements of installing [MiniSat](https://github.com/niklasso/minisat). 
+
 - 2. Instructions:
 
-     Step 1: Build the `Enhanced_Kodkod` module:
-
-     go to `Enhanced_Kodkod` folder and run the command:
+     To build the `Enhanced_Kodkod` module, go to `Enhanced_Kodkod` folder and run the command:
 
      ``````
-     tbd
+     ./build.sh
      ``````
      
-     Step 2: Build the `Enumerator_Estimator` module: 
-     
-     go to `Enumerator_Estimator` folder and run the following command. You will get the `cmake-build-release` folder, if the build succeeds.
+     To build the `Enumerator_Estimator` module, go to `Enumerator_Estimator` folder and run the following command. You will get the `cmake-build-release` folder, if the build succeeds.
      
      ``````
      ./build.sh
@@ -66,10 +70,12 @@ SymMC consists of three modules:
 
 ### 5. Using SymMC
 
-- Step 1: Use enhanced Kodkod module to translate the input Alloy specification into a SAT formula and also extract the symmetry information. We denote the path of the generated SAT formula as `path_to_sat_file`; and the path of the extracted symmetry information as `path_to_sym_file`.
+- Step 1: Use enhanced Kodkod module to translate the input Alloy specification into a SAT formula and also extract the symmetry information. We denote the path of the input Alloy specification as `path_to_spec_file`; the directory path of the generated SAT formula as `path_to_sat_dir`; and the directory path of the extracted symmetry information as `path_to_sym_dir`.
+
+  To get the translated SAT formula and the extracted symmetry information, run the command:
 
   ```
-  tbd
+  ./run.sh $path_to_spec_file $path_to_sat_dir $ path_to_sym_dir
 
 - Step 2: Take the translated SAT formula and the extracted symmetry information, use the enumerator and estimator modules to get three possible outputs. Go to the `Enumerator_Estimator` folder, and:
 
